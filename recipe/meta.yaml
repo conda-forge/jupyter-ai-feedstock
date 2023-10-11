@@ -37,6 +37,8 @@ requirements:
     - typing-extensions >=4.5.0
     - distributed
     - faiss-cpu
+    - traitlets >=5.0,<6
+    - deepmerge >=1.0,<2
 
 test:
   requires:
