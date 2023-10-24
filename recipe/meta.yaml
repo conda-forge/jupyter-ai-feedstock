@@ -1,5 +1,5 @@
 {% set name = "jupyter-ai" %}
-{% set version = "2.3.0" %}
+{% set version = "2.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jupyter_ai-{{ version }}.tar.gz
-  sha256: 8ce44b88528195e6de1f9086994d68731b1dbbc03f0e8709baf5a8819c254462
+  sha256: 0d065b18f4985fb726010e76d9c6059932e21327ea2951ccaa18b6e7b5189240
 
 build:
   noarch: python
