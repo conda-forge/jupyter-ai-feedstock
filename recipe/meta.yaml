@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -32,7 +32,7 @@ requirements:
     - importlib-metadata >=5.2.0
     - langchain ==0.0.318
     - tiktoken
-    - jupyter-ai-magics ==2.5.0
+    - jupyter-ai-magics ==2.6.0
     - dask-core
     - typing-extensions >=4.5.0
     - distributed
