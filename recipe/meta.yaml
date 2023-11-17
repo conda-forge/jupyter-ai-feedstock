@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 2
 
 requirements:
   host:
@@ -26,7 +26,6 @@ requirements:
     - python >=3.8
     - jupyter_server >=1.6,<3
     - jupyterlab >=4.0,<5
-    - pydantic >=1.0,<2
     - openai >=0.26,<1
     - aiosqlite >=0.18
     - importlib-metadata >=5.2.0
