@@ -1,5 +1,5 @@
 {% set name = "jupyter-ai" %}
-{% set version = "2.6.0" %}
+{% set version = "2.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jupyter_ai-{{ version }}.tar.gz
-  sha256: 8ae0b34990a7a6ce56aa3360e50a3db22bb1916d9aa7f36ce2e78203b6ed29d2
+  sha256: 3c4c2720df53a9416c7bd616e07d57694e2f24605bb8132604692ddf0463c9d6
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 2
+  number: 0
 
 requirements:
   host:
@@ -29,9 +29,9 @@ requirements:
     - openai >=0.26,<1
     - aiosqlite >=0.18
     - importlib-metadata >=5.2.0
-    - langchain ==0.0.318
+    - langchain ==0.0.346
     - tiktoken
-    - jupyter-ai-magics ==2.6.0
+    - jupyter-ai-magics ==2.7.0
     - dask-core
     - typing-extensions >=4.5.0
     - distributed
