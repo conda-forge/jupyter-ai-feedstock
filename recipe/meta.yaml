@@ -19,6 +19,8 @@ requirements:
     - python >=3.8
     - hatchling >=1.4.0
     - jupyterlab >=4.0,<5
+    - langchain-community <0.0.8
+    - langchain-core >=0.1.0,<0.1.4
     - hatch-nodejs-version
     - pip
     - hatch-jupyter-builder
