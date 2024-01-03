@@ -33,7 +33,7 @@ requirements:
     - importlib-metadata >=5.2.0
     - langchain ==0.0.350
     - tiktoken
-    - jupyter-ai-magics ==2.8.0
+    - jupyter-ai-magics ==2.8.1
     - dask-core
     - typing-extensions >=4.5.0
     - distributed
