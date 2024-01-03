@@ -1,5 +1,5 @@
 {% set name = "jupyter-ai" %}
-{% set version = "2.8.0" %}
+{% set version = "2.8.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jupyter_ai-{{ version }}.tar.gz
-  sha256: d0ff29501386ec559cbafcbfe81f18650e0b0331b5dede2c548e5bb3525357c6
+  sha256: d92f5f9d1d9fb307e06e5d3f928b1ec442ae3e274e7ae66cbb9c8f52ffcc7ab9
 
 build:
   noarch: python
@@ -19,6 +19,8 @@ requirements:
     - python >=3.8
     - hatchling >=1.4.0
     - jupyterlab >=4.0,<5
+    - langchain-community <0.0.8
+    - langchain-core >=0.1.0,<0.1.4
     - hatch-nodejs-version
     - pip
     - hatch-jupyter-builder
@@ -31,7 +33,7 @@ requirements:
     - importlib-metadata >=5.2.0
     - langchain ==0.0.350
     - tiktoken
-    - jupyter-ai-magics ==2.8.0
+    - jupyter-ai-magics ==2.8.1
     - dask-core
     - typing-extensions >=4.5.0
     - distributed
