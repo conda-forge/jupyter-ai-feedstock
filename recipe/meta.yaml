@@ -19,8 +19,8 @@ requirements:
     - python >=3.8
     - hatchling >=1.4.0
     - jupyterlab >=4.0,<5
-    - langchain-community <0.0.8
-    - langchain-core >=0.1.0,<0.1.4
+    - langchain-community >0.0.8,<=0.1.0
+    - langchain-core >0.1.6,<=0.2.0
     - hatch-nodejs-version
     - pip
     - hatch-jupyter-builder
@@ -31,9 +31,9 @@ requirements:
     - openai >=0.26,<1
     - aiosqlite >=0.18
     - importlib-metadata >=5.2.0
-    - langchain ==0.0.350
+    - langchain >=0.1.0,<0.2.0
     - tiktoken
-    - jupyter-ai-magics ==2.8.1
+    - jupyter-ai-magics ==2.9.1
     - dask-core
     - typing-extensions >=4.5.0
     - distributed
