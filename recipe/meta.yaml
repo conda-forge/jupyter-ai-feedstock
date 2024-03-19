@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jupyter_ai-{{ version }}.tar.gz
-  sha256: 41eb47bdb6526e3edd494a1d2854744e4fb77e1b88e40360ffb944a446851882
+  sha256: c5ad7449de8f5a11e5fc8af39c7099804828bce9cb67939f0e1383802fd2ab9b
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
