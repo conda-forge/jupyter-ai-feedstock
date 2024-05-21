@@ -28,7 +28,7 @@ requirements:
     - jupyterlab >=4.0,<5
     - aiosqlite >=0.18
     - importlib-metadata >=5.2.0
-    - jupyter-ai-magics ==2.15.0
+    - jupyter-ai-magics ==2.16.0
     - dask-core
     - typing-extensions >=4.5.0
     - distributed
