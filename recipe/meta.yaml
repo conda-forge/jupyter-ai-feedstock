@@ -42,7 +42,7 @@ test:
   imports:
     - jupyter_ai
   commands:
-    - pip install faiss-cpu<=1.8.0
+    - pip install "faiss-cpu<=1.8.0"
     - pip check
 
 about:
