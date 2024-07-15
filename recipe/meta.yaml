@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 2
 
 requirements:
   host:
@@ -32,9 +32,9 @@ requirements:
     - dask-core
     - typing-extensions >=4.5.0
     - distributed
-    - faiss-cpu
     - traitlets >=5.0,<6
     - deepmerge >=1.0,<2
+    # faiss-cpu>=1.8.0 is installed via `./post-link.sh`
 
 test:
   requires:
