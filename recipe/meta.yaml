@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -42,7 +42,6 @@ test:
   imports:
     - jupyter_ai
   commands:
-    - pip install "faiss-cpu<=1.8.0"
     - pip check
 
 about:
