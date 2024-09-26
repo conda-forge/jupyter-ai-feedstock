@@ -28,12 +28,12 @@ requirements:
     - jupyterlab >=4.0,<5
     - aiosqlite >=0.18
     - importlib-metadata >=5.2.0
-    - jupyter-ai-magics ==2.23.0
+    - jupyter-ai-magics ==2.24.0
     - dask-core
     - typing-extensions >=4.5.0
     - distributed
     - traitlets >=5.0,<6
-    - deepmerge >=1.0,<2
+    - deepmerge >=2.0,<3
     # faiss-cpu>=1.8.0 is installed via `./post-link.sh`
 
 test:
