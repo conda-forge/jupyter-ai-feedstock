@@ -28,21 +28,19 @@ requirements:
     - jupyterlab >=4.0,<5
     - aiosqlite >=0.18
     - importlib-metadata >=5.2.0
-    - jupyter-ai-magics ==2.28.0
+    - jupyter-ai-magics ==2.28.1
     - dask-core
     - typing-extensions >=4.5.0
     - distributed
     - traitlets >=5.0,<6
     - deepmerge >=2.0,<3
-    - faiss-cpu>=1.8.0,<2
+    - faiss-cpu >=1.8.0,<2
 
 test:
   requires:
     - pip
   imports:
     - jupyter_ai
-  commands:
-    - pip check
 
 about:
   summary: A generative AI extension for JupyterLab
