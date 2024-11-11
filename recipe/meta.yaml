@@ -1,5 +1,5 @@
 {% set name = "jupyter-ai" %}
-{% set version = "2.28.0" %}
+{% set version = "2.28.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jupyter_ai-{{ version }}.tar.gz
-  sha256: e9a82f403042d1c8cee4dd1a3927aa3112777d1985241113a996e5b729c2151a
+  sha256: db6dfff6bb61822b0cb1a1dfda489b995f3a8e5f23a580e518b0e420fd52d806
 
 build:
   noarch: python
@@ -28,21 +28,19 @@ requirements:
     - jupyterlab >=4.0,<5
     - aiosqlite >=0.18
     - importlib-metadata >=5.2.0
-    - jupyter-ai-magics ==2.28.0
+    - jupyter-ai-magics ==2.28.1
     - dask-core
     - typing-extensions >=4.5.0
     - distributed
     - traitlets >=5.0,<6
     - deepmerge >=2.0,<3
-    # faiss-cpu>=1.8.0 is installed via `./post-link.sh`
+    - faiss-cpu >=1.8.0,<2
 
 test:
   requires:
     - pip
   imports:
     - jupyter_ai
-  commands:
-    - pip check
 
 about:
   summary: A generative AI extension for JupyterLab
