@@ -1,5 +1,5 @@
 {% set name = "jupyter-ai" %}
-{% set version = "2.28.2" %}
+{% set version = "2.28.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jupyter_ai-{{ version }}.tar.gz
-  sha256: e893f2494033bb948f04cf3aa28f44e1ea27a18767027e2b721198151b5ed8b0
+  sha256: 4be34772c3bd2b0dd34736843e57ce2f8b7bb271d2ae2b728df6645354074b89
 
 build:
   noarch: python
@@ -28,7 +28,7 @@ requirements:
     - jupyterlab >=4.0,<5
     - aiosqlite >=0.18
     - importlib-metadata >=5.2.0
-    - jupyter-ai-magics ==2.28.2
+    - jupyter-ai-magics ==2.28.3
     - dask-core
     - typing-extensions >=4.5.0
     - distributed
