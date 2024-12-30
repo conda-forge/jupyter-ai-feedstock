@@ -6,24 +6,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jupyter_ai-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/jupyter_ai-{{ version }}.tar.gz
   sha256: a9ca786e3fc8d2f941a5295923a7d01b5ee6ad5fdcaa0e97250aa8808c29d0c5
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - hatchling >=1.4.0
     - jupyterlab >=4.0,<5
     - hatch-nodejs-version
     - pip
     - hatch-jupyter-builder
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - jupyter_server >=1.6,<3
     - jupyterlab >=4.0,<5
     - aiosqlite >=0.18
@@ -39,6 +39,7 @@ requirements:
 test:
   requires:
     - pip
+    - python {{ python_min }}
   imports:
     - jupyter_ai
 
