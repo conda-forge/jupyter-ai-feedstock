@@ -35,7 +35,7 @@ requirements:
     - deepmerge >=2.0,<3
     - faiss-cpu >=1.8.0,<2
     - pydantic >=2.0,<3.0
-    - jupyter-ai-magics ==2.29.0
+    - jupyter-ai-magics ==2.29.1
 
 test:
   requires:
