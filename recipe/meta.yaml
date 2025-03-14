@@ -1,5 +1,5 @@
 {% set name = "jupyter-ai" %}
-{% set version = "2.29.1" %}
+{% set version = "2.30.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/jupyter_ai-{{ version }}.tar.gz
-  sha256: 43eaa30c3d5071e32210ca0f6942530fc47e3a71624d533144aac06ba7e9fba7
+  sha256: 2aff02d999d607add850624bfb46b1a1f2701ddf8614bb58f20e8c6847361ac7
 
 build:
   noarch: python
@@ -24,18 +24,15 @@ requirements:
     - hatch-jupyter-builder
   run:
     - python >={{ python_min }}
-    - jupyter_server >=1.6,<3
-    - jupyterlab >=4.0,<5
-    - aiosqlite >=0.18
+    - jupyter_server >=2.4,<3
     - importlib-metadata >=5.2.0
+    - pydantic >=2.10.0,<3
+    - jupyter-ai-magics ==2.30.0
     - dask-core
-    - typing-extensions >=4.5.0
     - distributed
-    - traitlets >=5.0,<6
-    - deepmerge >=2.0,<3
     - faiss-cpu >=1.8.0,<2
-    - pydantic >=2.0,<3.0
-    - jupyter-ai-magics ==2.29.1
+    - traitlets >=5.6,<6
+    - deepmerge >=2.0,<3
 
 test:
   requires:
