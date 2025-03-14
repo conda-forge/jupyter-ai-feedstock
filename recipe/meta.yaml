@@ -24,18 +24,15 @@ requirements:
     - hatch-jupyter-builder
   run:
     - python >={{ python_min }}
-    - jupyter_server >=1.6,<3
-    - jupyterlab >=4.0,<5
-    - aiosqlite >=0.18
+    - jupyter_server >=2.4,<3
     - importlib-metadata >=5.2.0
+    - pydantic >=2.10.0,<3
+    - jupyter-ai-magics ==2.30.0
     - dask-core
-    - typing-extensions >=4.5.0
     - distributed
-    - traitlets >=5.0,<6
-    - deepmerge >=2.0,<3
     - faiss-cpu >=1.8.0,<2
-    - pydantic >=2.0,<3.0
-    - jupyter-ai-magics ==2.29.1
+    - traitlets >=5.6,<6
+    - deepmerge >=2.0,<3
 
 test:
   requires:
