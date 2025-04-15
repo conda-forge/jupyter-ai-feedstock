@@ -1,5 +1,5 @@
 {% set name = "jupyter-ai" %}
-{% set version = "2.31.2" %}
+{% set version = "2.31.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/jupyter_ai-{{ version }}.tar.gz
-  sha256: c858a56cbe0ae76a3fdf993680c70c7b67eb0dbacd5981ebbce457313dc2f408
+  sha256: e5f445e0c20104f9ec9180ec27c2025d44b791f127971285c99e5f6f0b549472
 
 build:
   noarch: python
@@ -27,7 +27,7 @@ requirements:
     - jupyter_server >=2.4,<3
     - importlib-metadata >=5.2.0
     - pydantic >=2.10.0,<3
-    - jupyter-ai-magics >=2.31.2,<3
+    - jupyter-ai-magics >=2.31.3,<3
     - dask-core
     - distributed
     - faiss-cpu >=1.8.0,<2
