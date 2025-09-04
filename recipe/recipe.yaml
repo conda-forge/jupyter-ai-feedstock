@@ -38,6 +38,13 @@ outputs:
         - faiss-cpu >=1.8.0,<2
         - traitlets >=5.6,<6
         - deepmerge >=2.0,<3
+        # The special `pin_subpackage()` Jinja function is used to define
+        # dependencies between outputs in the same recipe.
+        #
+        # Given version "1.2.3", this expression specifies the version range ">=1.2.3,<2".
+        # In other words, this requires `jupyter_ai_magics` to be at least the
+        # same version as `jupyter_ai`, but not a higher major version.
+        - ${{ pin_subpackage('jupyter-ai-magics', lower_bound="x.x.x", upper_bound="x") }}
 
     tests:
       - python:
@@ -52,6 +59,42 @@ outputs:
           # Forge. JAI v3 removes `faiss-cpu` and does not suffer this issue.
           #
           pip_check: false
+
+  - package:
+      name: jupyter-ai-magics
+      version: ${{ version }}
+
+    source:
+      url: https://pypi.org/packages/source/j/jupyter-ai-magics/jupyter_ai_magics-${{ version }}.tar.gz
+      sha256: cc2397f5e81ba37eb3e6a8968edd6af3d5efd93baaf3369e5334717986bf36ca
+
+    build:
+      noarch: python
+      script: ${{ PYTHON }} -m pip install . -vv
+      number: 1
+
+    requirements:
+      host:
+        - python >=${{ python_min }}
+        - hatchling >=1.4.0
+        - hatch-nodejs-version
+        - pip
+        - hatch-jupyter-builder
+      run:
+        - python >=${{ python_min }}
+        - ipython
+        - importlib-metadata >=5.2.0
+        - langchain >=0.3.0,<0.4.0
+        - langchain-community >=0.3.0,<0.4.0
+        - pydantic >=2.10.0,<3.0
+        - click >=8.1,<9
+        - jsonpath-ng >=1.5.3,<2
+
+    tests:
+      - python:
+          imports:
+            - jupyter_ai_magics
+          pip_check: true
 
 about:
   homepage: https://github.com/jupyterlab/jupyter-ai
