@@ -1,0 +1,65 @@
+context:
+  name: jupyter-ai
+  version: "2.31.6"
+  python_min: "3.9"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/jupyter_ai-${{ version }}.tar.gz
+  sha256: 65bc8f2563997387e4ef133119614b49ba0770059a43c1a4c0601dcb975a5a6a
+
+build:
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+  number: 1
+
+requirements:
+  host:
+    - python >=${{ python_min }}
+    - hatchling >=1.4.0
+    - jupyterlab >=4.0,<5
+    - hatch-nodejs-version
+    - pip
+    - hatch-jupyter-builder
+  run:
+    - python >=${{ python_min }}
+    - jupyter_server >=2.4,<3
+    - importlib-metadata >=5.2.0
+    - pydantic >=2.10.0,<3
+    - jupyter-ai-magics >=2.31.6,<3
+    - dask-core
+    - distributed
+    - faiss-cpu >=1.8.0,<2
+    - traitlets >=5.6,<6
+    - deepmerge >=2.0,<3
+
+tests:
+  - python:
+      imports:
+        - jupyter_ai
+      # We cannot run `pip check` in JAI v2 due to `faiss-cpu` being packaged
+      # differently on PyPI & Conda Forge.
+      #
+      # In both distributions, the `faiss-cpu` module is provided, but the
+      # `faiss-cpu` package wheel is only provided in the PyPI distribution.
+      # This causes `pip check` to fail when JAI v2 is installed from Conda
+      # Forge. JAI v3 removes `faiss-cpu` and does not suffer this issue.
+      #
+      pip_check: false
+
+about:
+  homepage: https://github.com/jupyterlab/jupyter-ai
+  repository: https://github.com/jupyterlab/jupyter-ai
+  documentation: https://jupyter-ai.readthedocs.io/en/v2/
+  license: BSD-3-Clause
+  license_file: LICENSE.txt
+
+extra:
+  recipe-maintainers:
+    - dlqqq
+    - 3coins
+    - andrii-i
+    - srdas
