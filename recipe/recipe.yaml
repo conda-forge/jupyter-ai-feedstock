@@ -30,7 +30,7 @@ outputs:
 
     requirements:
       host:
-        - python >=${{ python_min }}
+        - python ${{ python_min }}.*
         - hatchling >=1.4.0
         - jupyterlab >=4.0,<5
         - hatch-nodejs-version
@@ -68,6 +68,7 @@ outputs:
           # Forge. JAI v3 removes `faiss-cpu` and does not suffer this issue.
           #
           pip_check: false
+          python_version: ${{ python_min }}.*
 
     about:
       summary: "A JupyterLab extension providing chats with AI personas."
@@ -87,7 +88,7 @@ outputs:
 
     requirements:
       host:
-        - python >=${{ python_min }}
+        - python ${{ python_min }}.*
         - hatchling >=1.4.0
         - hatch-nodejs-version
         - pip
@@ -107,6 +108,7 @@ outputs:
           imports:
             - jupyter_ai_magics
           pip_check: true
+          python_version: ${{ python_min }}.*
 
     about:
       summary: "A package that provides the `%ai` and `%%ai` magic commands in IPython, used in Jupyter Notebook & JupyterLab."
