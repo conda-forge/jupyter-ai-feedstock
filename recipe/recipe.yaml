@@ -1,9 +1,18 @@
 context:
   version: "2.31.6"
+  build_number: 1
   python_min: "3.9"
 
 recipe:
-  version: "2.31.6"
+  # `recipe.name` is ignored in this recipe. It is just set to suppress a
+  # warning raised by the `conda-forge-linting` service.
+  #
+  # See: https://rattler.build/latest/reference/recipe_file/#outputs-section
+  name: jupyter-ai-monorepo
+  version: ${{ version }}
+
+build:
+  number: ${{ build_number }}
 
 outputs:
   - package:
@@ -17,7 +26,7 @@ outputs:
     build:
       noarch: python
       script: ${{ PYTHON }} -m pip install . -vv
-      number: 1
+      number: ${{ build_number }}
 
     requirements:
       host:
@@ -60,6 +69,9 @@ outputs:
           #
           pip_check: false
 
+    about:
+      summary: "A JupyterLab extension providing chats with AI personas."
+
   - package:
       name: jupyter-ai-magics
       version: ${{ version }}
@@ -71,7 +83,7 @@ outputs:
     build:
       noarch: python
       script: ${{ PYTHON }} -m pip install . -vv
-      number: 1
+      number: ${{ build_number }}
 
     requirements:
       host:
@@ -96,12 +108,19 @@ outputs:
             - jupyter_ai_magics
           pip_check: true
 
+    about:
+      summary: "A package that provides the `%ai` and `%%ai` magic commands in IPython, used in Jupyter Notebook & JupyterLab."
+
 about:
   homepage: https://github.com/jupyterlab/jupyter-ai
   repository: https://github.com/jupyterlab/jupyter-ai
   documentation: https://jupyter-ai.readthedocs.io/en/v2/
   license: BSD-3-Clause
   license_file: LICENSE
+  # `about.summary` should be overwritten by `outputs[].about.summary` for each
+  # output. This is only present to suppress a warning raised by the
+  # `conda-forge-linting` service.
+  summary: "Placeholder summary used in the `jupyter-ai-monorepo` recipe."
 
 extra:
   recipe-maintainers:
