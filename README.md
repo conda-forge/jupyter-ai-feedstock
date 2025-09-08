@@ -3,11 +3,32 @@ About jupyter-ai-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jupyter-ai-feedstock/blob/main/LICENSE.txt)
 
+
+About jupyter-ai
+----------------
+
 Home: https://github.com/jupyterlab/jupyter-ai
 
 Package license: BSD-3-Clause
 
-Summary: A generative AI extension for JupyterLab
+Summary: A JupyterLab extension providing chats with AI personas.
+
+Development: https://github.com/jupyterlab/jupyter-ai
+
+Documentation: https://jupyter-ai.readthedocs.io/en/v2/
+
+About jupyter-ai-magics
+-----------------------
+
+Home: https://github.com/jupyterlab/jupyter-ai
+
+Package license: BSD-3-Clause
+
+Summary: A package that provides the `%ai` and `%%ai` magic commands in IPython, used in Jupyter Notebook & JupyterLab.
+
+Development: https://github.com/jupyterlab/jupyter-ai
+
+Documentation: https://jupyter-ai.readthedocs.io/en/v2/
 
 Current build status
 ====================
@@ -28,6 +49,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-jupyter--ai-green.svg)](https://anaconda.org/conda-forge/jupyter-ai) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/jupyter-ai.svg)](https://anaconda.org/conda-forge/jupyter-ai) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/jupyter-ai.svg)](https://anaconda.org/conda-forge/jupyter-ai) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/jupyter-ai.svg)](https://anaconda.org/conda-forge/jupyter-ai) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-jupyter--ai--magics-green.svg)](https://anaconda.org/conda-forge/jupyter-ai-magics) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/jupyter-ai-magics.svg)](https://anaconda.org/conda-forge/jupyter-ai-magics) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/jupyter-ai-magics.svg)](https://anaconda.org/conda-forge/jupyter-ai-magics) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/jupyter-ai-magics.svg)](https://anaconda.org/conda-forge/jupyter-ai-magics) |
 
 Installing jupyter-ai
 =====================
@@ -39,16 +61,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `jupyter-ai` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `jupyter-ai, jupyter-ai-magics` can be installed with `conda`:
 
 ```
-conda install jupyter-ai
+conda install jupyter-ai jupyter-ai-magics
 ```
 
 or with `mamba`:
 
 ```
-mamba install jupyter-ai
+mamba install jupyter-ai jupyter-ai-magics
 ```
 
 It is possible to list all of the versions of `jupyter-ai` available on your platform with `conda`:
