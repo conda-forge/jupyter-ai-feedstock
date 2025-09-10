@@ -15,7 +15,7 @@ Summary: A JupyterLab extension providing chats with AI personas.
 
 Development: https://github.com/jupyterlab/jupyter-ai
 
-Documentation: https://jupyter-ai.readthedocs.io/en/v2/
+Documentation: https://jupyter-ai.readthedocs.io/en/v3/
 
 About jupyter-ai-magics
 -----------------------
@@ -28,7 +28,7 @@ Summary: A package that provides the `%ai` and `%%ai` magic commands in IPython,
 
 Development: https://github.com/jupyterlab/jupyter-ai
 
-Documentation: https://jupyter-ai.readthedocs.io/en/v2/
+Documentation: https://jupyter-ai.readthedocs.io/en/v3/
 
 Current build status
 ====================
