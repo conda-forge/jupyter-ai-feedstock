@@ -1,6 +1,11 @@
 context:
-  version: "2.31.6"
-  build_number: 1
+  # NOTE: delete `recipe/conda_build_config.yml` when v3.0.0 official is
+  # published.
+  #
+  # CFEP-05 requires us to publish pre-releases to a special
+  # `conda-forge/label/jupyter_ai_rc` channel, which is set in that file.
+  version: "3.0.0b7"
+  build_number: 0
   python_min: "3.9"
 
 recipe:
@@ -21,7 +26,7 @@ outputs:
 
     source:
       url: https://pypi.org/packages/source/j/jupyter-ai/jupyter_ai-${{ version }}.tar.gz
-      sha256: 65bc8f2563997387e4ef133119614b49ba0770059a43c1a4c0601dcb975a5a6a
+      sha256: 8961998d33fd583389efd20a28785569fd43c6118e614ac78f1636d01734c61f
 
     build:
       noarch: python
@@ -38,15 +43,15 @@ outputs:
         - hatch-jupyter-builder
       run:
         - python >=${{ python_min }}
-        - jupyter_server >=2.4,<3
+        - jupyter_server >=2.15.0,<3
         - importlib-metadata >=5.2.0
         - pydantic >=2.10.0,<3
-        - jupyter-ai-magics >=2.31.6,<3
-        - dask-core
-        - distributed
-        - faiss-cpu >=1.8.0,<2
         - traitlets >=5.6,<6
         - deepmerge >=2.0,<3
+        - jupyterlab-chat >=0.17.0,<0.18.0
+        - litellm >=1.73,<2
+        - jinja2 >=3.0,<4
+        - python-dotenv >=1,<2
         # The special `pin_subpackage()` Jinja function is used to define
         # dependencies between outputs in the same recipe.
         #
@@ -59,15 +64,7 @@ outputs:
       - python:
           imports:
             - jupyter_ai
-          # We cannot run `pip check` in JAI v2 due to `faiss-cpu` being packaged
-          # differently on PyPI & Conda Forge.
-          #
-          # In both distributions, the `faiss-cpu` module is provided, but the
-          # `faiss-cpu` package wheel is only provided in the PyPI distribution.
-          # This causes `pip check` to fail when JAI v2 is installed from Conda
-          # Forge. JAI v3 removes `faiss-cpu` and does not suffer this issue.
-          #
-          pip_check: false
+          pip_check: true
           python_version: ${{ python_min }}.*
 
     about:
@@ -79,7 +76,7 @@ outputs:
 
     source:
       url: https://pypi.org/packages/source/j/jupyter-ai-magics/jupyter_ai_magics-${{ version }}.tar.gz
-      sha256: cc2397f5e81ba37eb3e6a8968edd6af3d5efd93baaf3369e5334717986bf36ca
+      sha256: 13b18f3b608ac1cd51d98378ea2a823d802188b58ff186d833b5e8748097c440
 
     build:
       noarch: python
@@ -96,12 +93,8 @@ outputs:
       run:
         - python >=${{ python_min }}
         - ipython
-        - importlib-metadata >=5.2.0
-        - langchain >=0.3.0,<0.4.0
-        - langchain-community >=0.3.0,<0.4.0
         - pydantic >=2.10.0,<3.0
         - click >=8.1,<9
-        - jsonpath-ng >=1.5.3,<2
 
     tests:
       - python:
@@ -116,7 +109,7 @@ outputs:
 about:
   homepage: https://github.com/jupyterlab/jupyter-ai
   repository: https://github.com/jupyterlab/jupyter-ai
-  documentation: https://jupyter-ai.readthedocs.io/en/v2/
+  documentation: https://jupyter-ai.readthedocs.io/en/v3/
   license: BSD-3-Clause
   license_file: LICENSE
   # `about.summary` should be overwritten by `outputs[].about.summary` for each
