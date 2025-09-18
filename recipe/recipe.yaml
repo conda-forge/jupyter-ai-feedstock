@@ -6,7 +6,7 @@ context:
   # `conda-forge/label/jupyter_ai_rc` channel, which is set in that file.
   version: "3.0.0b7"
   build_number: 0
-  python_min: "3.9"
+  python_min: "3.10"
 
 recipe:
   # `recipe.name` is ignored in this recipe. It is just set to suppress a
