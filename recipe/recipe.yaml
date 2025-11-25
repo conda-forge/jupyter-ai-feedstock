@@ -1,6 +1,6 @@
 context:
-  version: "2.31.6"
-  build_number: 1
+  version: "2.31.7"
+  build_number: 0
   python_min: "3.9"
 
 recipe:
@@ -21,7 +21,7 @@ outputs:
 
     source:
       url: https://pypi.org/packages/source/j/jupyter-ai/jupyter_ai-${{ version }}.tar.gz
-      sha256: 65bc8f2563997387e4ef133119614b49ba0770059a43c1a4c0601dcb975a5a6a
+      sha256: 88289ee0fabdfa9e1883a0089c9afa36a0cc916c81e81b6f4e2655f000437159
 
     build:
       noarch: python
@@ -41,7 +41,6 @@ outputs:
         - jupyter_server >=2.4,<3
         - importlib-metadata >=5.2.0
         - pydantic >=2.10.0,<3
-        - jupyter-ai-magics >=2.31.6,<3
         - dask-core
         - distributed
         - faiss-cpu >=1.8.0,<2
@@ -79,7 +78,7 @@ outputs:
 
     source:
       url: https://pypi.org/packages/source/j/jupyter-ai-magics/jupyter_ai_magics-${{ version }}.tar.gz
-      sha256: cc2397f5e81ba37eb3e6a8968edd6af3d5efd93baaf3369e5334717986bf36ca
+      sha256: c6d77a29b19e520ff1113fb92c4830df4154e322c917a4c356739440450721e4
 
     build:
       noarch: python
