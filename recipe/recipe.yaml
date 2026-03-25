@@ -1,110 +1,45 @@
 context:
-  # NOTE: delete `recipe/conda_build_config.yml` when v3.0.0 official is
-  # published.
-  #
-  # CFEP-05 requires us to publish pre-releases to a special
-  # `conda-forge/label/jupyter_ai_rc` channel, which is set in that file.
-  version: "3.0.0b7"
-  build_number: 0
-  python_min: "3.10"
+  version: "3.0.0rc0"
 
-recipe:
-  # `recipe.name` is ignored in this recipe. It is just set to suppress a
-  # warning raised by the `conda-forge-linting` service.
-  #
-  # See: https://rattler.build/latest/reference/recipe_file/#outputs-section
-  name: jupyter-ai-monorepo
+package:
+  name: jupyter-ai
   version: ${{ version }}
 
+source:
+  url: https://pypi.org/packages/source/j/jupyter-ai/jupyter_ai-${{ version }}.tar.gz
+  sha256: c3b959f2cd09d9365d6d176b7f2d79d40bc8480ee7051ac5b0bfc9ee97e86f16
+
 build:
-  number: ${{ build_number }}
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+  number: 0
 
-outputs:
-  - package:
-      name: jupyter-ai
-      version: ${{ version }}
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatchling >=1.4.0
+    - jupyterlab >=4.0,<5
+    - hatch-nodejs-version
+    - pip
+    - hatch-jupyter-builder
+  run:
+    - python >=${{ python_min }}
+    - jupyter-ai-acp-client >=0.0.8
+    - jupyter-ai-chat-commands >=0.0.4
+    - jupyter-ai-persona-manager >=0.0.8
+    - jupyter-ai-router >=0.0.3
+    - jupyter-ai-tools >=0.4.1
+    - jupyter_server_documents >=0.1.1
+    - jupyter-server-mcp >=0.1.2
+    - jupyterlab-chat >=0.20.0
+    - jupyterlab-notebook-awareness
 
-    source:
-      url: https://pypi.org/packages/source/j/jupyter-ai/jupyter_ai-${{ version }}.tar.gz
-      sha256: 8961998d33fd583389efd20a28785569fd43c6118e614ac78f1636d01734c61f
-
-    build:
-      noarch: python
-      script: ${{ PYTHON }} -m pip install . -vv
-      number: ${{ build_number }}
-
-    requirements:
-      host:
-        - python ${{ python_min }}.*
-        - hatchling >=1.4.0
-        - jupyterlab >=4.0,<5
-        - hatch-nodejs-version
-        - pip
-        - hatch-jupyter-builder
-      run:
-        - python >=${{ python_min }}
-        - jupyter_server >=2.15.0,<3
-        - importlib-metadata >=5.2.0
-        - pydantic >=2.10.0,<3
-        - traitlets >=5.6,<6
-        - deepmerge >=2.0,<3
-        - jupyterlab-chat >=0.17.0,<0.18.0
-        - litellm >=1.73,<2
-        - jinja2 >=3.0,<4
-        - python-dotenv >=1,<2
-        # The special `pin_subpackage()` Jinja function is used to define
-        # dependencies between outputs in the same recipe.
-        #
-        # Given version "1.2.3", this expression specifies the version range ">=1.2.3,<2".
-        # In other words, this requires `jupyter_ai_magics` to be at least the
-        # same version as `jupyter_ai`, but not a higher major version.
-        - ${{ pin_subpackage('jupyter-ai-magics', lower_bound="x.x.x", upper_bound="x") }}
-
-    tests:
-      - python:
-          imports:
-            - jupyter_ai
-          pip_check: true
-          python_version: ${{ python_min }}.*
-
-    about:
-      summary: "A JupyterLab extension providing chats with AI personas."
-
-  - package:
-      name: jupyter-ai-magics
-      version: ${{ version }}
-
-    source:
-      url: https://pypi.org/packages/source/j/jupyter-ai-magics/jupyter_ai_magics-${{ version }}.tar.gz
-      sha256: 13b18f3b608ac1cd51d98378ea2a823d802188b58ff186d833b5e8748097c440
-
-    build:
-      noarch: python
-      script: ${{ PYTHON }} -m pip install . -vv
-      number: ${{ build_number }}
-
-    requirements:
-      host:
-        - python ${{ python_min }}.*
-        - hatchling >=1.4.0
-        - hatch-nodejs-version
-        - pip
-        - hatch-jupyter-builder
-      run:
-        - python >=${{ python_min }}
-        - ipython
-        - pydantic >=2.10.0,<3.0
-        - click >=8.1,<9
-
-    tests:
-      - python:
-          imports:
-            - jupyter_ai_magics
-          pip_check: true
-          python_version: ${{ python_min }}.*
-
-    about:
-      summary: "A package that provides the `%ai` and `%%ai` magic commands in IPython, used in Jupyter Notebook & JupyterLab."
+tests:
+  - python:
+      imports:
+        - jupyter_ai
+      pip_check: true
+      python_version: ${{ python_min }}.*
 
 about:
   homepage: https://github.com/jupyterlab/jupyter-ai
@@ -112,10 +47,7 @@ about:
   documentation: https://jupyter-ai.readthedocs.io/en/v3/
   license: BSD-3-Clause
   license_file: LICENSE
-  # `about.summary` should be overwritten by `outputs[].about.summary` for each
-  # output. This is only present to suppress a warning raised by the
-  # `conda-forge-linting` service.
-  summary: "Placeholder summary used in the `jupyter-ai-monorepo` recipe."
+  summary: "A set of extensions providing agentic AI in JupyterLab"
 
 extra:
   recipe-maintainers:
