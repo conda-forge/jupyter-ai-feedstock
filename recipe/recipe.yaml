@@ -1,5 +1,5 @@
 context:
-  version: "3.0.0rc0"
+  version: "3.0.0rc1"
 
 package:
   name: jupyter-ai
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyter-ai/jupyter_ai-${{ version }}.tar.gz
-  sha256: c3b959f2cd09d9365d6d176b7f2d79d40bc8480ee7051ac5b0bfc9ee97e86f16
+  sha256: daf16020c049f3a267f4bc6b5fd4e9b3cc5f83db550adc1e54011e4b3fec72ae
 
 build:
   noarch: python
@@ -32,6 +32,7 @@ requirements:
     - jupyter_server_documents >=0.1.1
     - jupyter-server-mcp >=0.1.2
     - jupyterlab-chat >=0.20.0
+    - jupyterlab-commands-toolkit
     - jupyterlab-notebook-awareness
 
 tests:
