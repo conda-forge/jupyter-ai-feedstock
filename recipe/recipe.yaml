@@ -1,5 +1,5 @@
 context:
-  version: "3.0.0rc1"
+  version: "3.0.0"
 
 package:
   name: jupyter-ai
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyter-ai/jupyter_ai-${{ version }}.tar.gz
-  sha256: daf16020c049f3a267f4bc6b5fd4e9b3cc5f83db550adc1e54011e4b3fec72ae
+  sha256: f7e56c5884328812500d1e4bb4c47146f0a920f913b8033fce15ac56d62ec87b
 
 build:
   noarch: python
@@ -24,16 +24,16 @@ requirements:
     - hatch-jupyter-builder
   run:
     - python >=${{ python_min }}
-    - jupyter-ai-acp-client >=0.0.8
+    - jupyter-ai-acp-client >=0.1.0
     - jupyter-ai-chat-commands >=0.0.4
     - jupyter-ai-persona-manager >=0.0.8
     - jupyter-ai-router >=0.0.3
     - jupyter-ai-tools >=0.4.1
-    - jupyter_server_documents >=0.1.1
+    - jupyter_server_documents >=0.1.2
     - jupyter-server-mcp >=0.1.2
-    - jupyterlab-chat >=0.20.0
-    - jupyterlab-commands-toolkit
-    - jupyterlab-notebook-awareness
+    - jupyterlab-chat >=0.21.0
+    - jupyterlab-commands-toolkit >=0.1.4
+    - jupyterlab-notebook-awareness >=0.2.0
 
 tests:
   - python:
