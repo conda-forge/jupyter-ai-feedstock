@@ -1,5 +1,5 @@
 context:
-  version: "3.1.0"
+  version: "3.1.1"
 
 package:
   name: jupyter-ai
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyter-ai/jupyter_ai-${{ version }}.tar.gz
-  sha256: 61675c6951717173e97243946d172df5858aa44214324171aa84d6c46f89c437
+  sha256: 0dcddce6deb601140a94099591aa7a2031ec3da98fdbb93eac4e78eef9ed2492
 
 build:
   noarch: python
