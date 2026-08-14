@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyter-ai/jupyter_ai-${{ version }}.tar.gz
-  sha256: c8282fbb3bb9d52a1ae15bcbf67d672bc757d3098f68f0e0f196aebd0068415a
+  sha256: 780d693a5fcb6bea20393704d2ad85247e4bc43679eb61fc4613ea0fe4f3b485
 
 build:
   noarch: python
