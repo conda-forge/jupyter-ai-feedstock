@@ -27,7 +27,7 @@ requirements:
     - jupyter-ai-acp-client >=0.2.1,<0.3.0
     - jupyter-ai-chat-commands >=0.0.4,<0.1.0
     - jupyter-ai-persona-manager >=0.1.2,<0.2.0
-    - jupyter-ai-router >=0.0.6,<0.1.0
+    - jupyter-ai-router >=0.0.7,<0.1.0
     - jupyter-ai-tools >=0.6.1,<0.7.0
     - jupyter_server_documents >=0.3.3,<0.4.0
     - jupyter-server-mcp >=0.2.1,<0.4.0
