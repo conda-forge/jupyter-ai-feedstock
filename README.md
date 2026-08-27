@@ -37,10 +37,10 @@ Current release info
 Installing jupyter-ai
 =====================
 
-Installing `jupyter-ai` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `jupyter-ai` from the `conda-forge/label/jupyter-ai_rc` channel can be achieved by adding `conda-forge/label/jupyter-ai_rc` to your channels with:
 
 ```
-conda config --add channels conda-forge
+conda config --add channels conda-forge/label/jupyter-ai_rc
 conda config --set channel_priority strict
 ```
 
@@ -86,7 +86,7 @@ It is possible to list all of the versions of `jupyter-ai` available on your pla
 <summary>With conda</summary>
 
 ```
-conda search jupyter-ai --channel conda-forge
+conda search jupyter-ai --channel conda-forge/label/jupyter-ai_rc
 ```
 
 </details>
@@ -95,7 +95,7 @@ conda search jupyter-ai --channel conda-forge
 <summary>With mamba</summary>
 
 ```
-mamba search jupyter-ai --channel conda-forge
+mamba search jupyter-ai --channel conda-forge/label/jupyter-ai_rc
 ```
 
 </details>
@@ -104,7 +104,7 @@ mamba search jupyter-ai --channel conda-forge
 <summary>With pixi</summary>
 
 ```
-pixi search jupyter-ai --channel conda-forge
+pixi search jupyter-ai --channel conda-forge/label/jupyter-ai_rc
 ```
 
 </details>
@@ -114,13 +114,13 @@ pixi search jupyter-ai --channel conda-forge
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search jupyter-ai --channel conda-forge
+mamba repoquery search jupyter-ai --channel conda-forge/label/jupyter-ai_rc
 
 # List packages depending on `jupyter-ai`:
-mamba repoquery whoneeds jupyter-ai --channel conda-forge
+mamba repoquery whoneeds jupyter-ai --channel conda-forge/label/jupyter-ai_rc
 
 # List dependencies of `jupyter-ai`:
-mamba repoquery depends jupyter-ai --channel conda-forge
+mamba repoquery depends jupyter-ai --channel conda-forge/label/jupyter-ai_rc
 ```
 
 </details>
