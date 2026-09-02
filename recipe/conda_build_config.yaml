@@ -1,0 +1,5 @@
+channel_sources:
+  - conda-forge/label/jupyter-ai_stable,conda-forge
+channel_targets:
+  - conda-forge main
+  - conda-forge jupyter-ai_stable
