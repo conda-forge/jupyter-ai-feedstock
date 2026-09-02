@@ -1,8 +1,8 @@
 channel_sources:
-- conda-forge
+- conda-forge/label/jupyter-ai_stable,conda-forge
 channel_targets:
-- conda-forge main
+- conda-forge jupyter-ai_stable
 docker_image:
 - quay.io/condaforge/linux-anvil-x86_64:alma10
 python_min:
-- '3.10'
+- '3.11'
