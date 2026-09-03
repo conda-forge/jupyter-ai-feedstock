@@ -1,5 +1,5 @@
 channel_sources:
-- conda-forge/label/jupyter-ai_rc,conda-forge
+- conda-forge/label/jupyter-ai_stable,conda-forge/label/jupyter-ai_rc,conda-forge
 channel_targets:
 - conda-forge jupyter-ai_rc
 docker_image:
