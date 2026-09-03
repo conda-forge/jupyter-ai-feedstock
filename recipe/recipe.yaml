@@ -1,5 +1,5 @@
 context:
-  version: "3.2.0rc0"
+  version: "3.2.0rc1"
 
 package:
   name: jupyter-ai
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyter-ai/jupyter_ai-${{ version }}.tar.gz
-  sha256: e2b634e4c7e2eebc7ef0b6a979a02c3404c4d0ccb6a324f2ceecc3043c1528db
+  sha256: a4ac253406a350d0515004fa589285490ec432807a86ec84b9376cee7c0f90cb
 
 build:
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -28,11 +28,11 @@ requirements:
     - jupyter-ai-chat-commands >=0.0.4,<0.1.0
     - jupyter-ai-persona-manager >=0.2.0rc0,<0.3.0
     - jupyter-ai-router >=0.1.0rc0,<0.2.0
-    - jupyter-ai-tools >=0.7.0rc0,<0.8.0
+    - jupyter-ai-tools >=0.7.0,<0.8.0
     - jupyter-live-content >=0.1.1,<0.2.0
-    - jupyter-server-mcp >=0.3.0rc0,<0.4.0
+    - jupyter-server-mcp >=0.3.0,<0.4.0
     - jupyterlab-chat >=0.25.0rc0,<0.26.0
-    - jupyterlab-commands-toolkit >=0.2.0rc0,<0.3.0
+    - jupyterlab-commands-toolkit >=0.2.0,<0.3.0
 
 tests:
   - python:
