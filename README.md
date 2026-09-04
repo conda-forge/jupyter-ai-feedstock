@@ -193,7 +193,16 @@ Feedstock Maintainers
 =====================
 
 * [@3coins](https://github.com/3coins/)
+* [@Zsailer](https://github.com/Zsailer/)
+* [@andreyvelich](https://github.com/andreyvelich/)
 * [@andrii-i](https://github.com/andrii-i/)
+* [@bhavana-nair](https://github.com/bhavana-nair/)
+* [@brichet](https://github.com/brichet/)
 * [@dlqqq](https://github.com/dlqqq/)
+* [@jasongrout](https://github.com/jasongrout/)
+* [@joshuatowner](https://github.com/joshuatowner/)
+* [@jtpio](https://github.com/jtpio/)
+* [@krassowski](https://github.com/krassowski/)
+* [@shravan-achar](https://github.com/shravan-achar/)
 * [@srdas](https://github.com/srdas/)
 
