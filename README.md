@@ -198,6 +198,7 @@ Feedstock Maintainers
 * [@andrii-i](https://github.com/andrii-i/)
 * [@bhavana-nair](https://github.com/bhavana-nair/)
 * [@brichet](https://github.com/brichet/)
+* [@conda-forge/jupyter-ai](https://github.com/orgs/conda-forge/teams/jupyter-ai/)
 * [@dlqqq](https://github.com/dlqqq/)
 * [@jasongrout](https://github.com/jasongrout/)
 * [@joshuatowner](https://github.com/joshuatowner/)
