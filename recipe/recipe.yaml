@@ -64,3 +64,4 @@ extra:
     - brichet
     - joshuatowner
     - bhavana-nair
+    - conda-forge/jupyter-ai
